@@ -48,7 +48,7 @@ def rconsoleClear():
 @app.route('/rconsolename', methods=['POST'])
 def rconsoleName():
     title = request.json.get('title', 'Console')
-    os.system(f'title {title}' if os.name == 'nt' else f'echo -ne "\033]0;{title}\007"')
+    os.system(f'title {title}')
     return jsonify(success=True)
 
 @app.route('/rconsoleinfo', methods=['POST'])
